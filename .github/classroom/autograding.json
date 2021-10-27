@@ -1,0 +1,104 @@
+{
+  "tests": [
+    {
+      "name": "Invalid input (inital test)",
+      "setup": "g++ vectors.cpp",
+      "run": "./a.out",
+      "input": "d",
+      "output": "Invalid input",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Vector Operations - colinear",
+      "setup": "g++ vectors.cpp",
+      "run": "./a.out",
+      "input": "v\r\n3\r\n-1\r\n-3\r\n1",
+      "output": "(3, -1) + (-3, 1) = (0, 0)\r\n(3, -1) - (-3, 1) = (6, -2)\r\nColinear: 1\r\nLength: 3.16228\r\nAngle: 180°\r\n",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Vector Operations - base vectors",
+      "setup": "g++ vectors.cpp",
+      "run": "./a.out",
+      "input": "v\r\n1\r\n0\r\n0\r\n1",
+      "output": "(1, 0) + (0, 1) = (1, 1)\r\n(1, 0) - (0, 1) = (1, -1)\r\nColinear: 0\r\nLength: 1\r\nAngle: 90°",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Vector Operations - rand vectors",
+      "setup": "g++ vectors.cpp",
+      "run": "./a.out",
+      "input": "v\r\n3\r\n5\r\n4\r\n-2",
+      "output": "(3, 5) + (4, -2) = (7, 3)\r\n(3, 5) - (4, -2) = (-1, 7)\r\nColinear: 0\r\nLength: 5.83095\r\nAngle: 85.6013°",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Triangle Area - base vectors",
+      "setup": "g++ vectors.cpp",
+      "run": "./a.out",
+      "input": "t\r\n0\r\n0\r\n1\r\n0\r\n0\r\n1",
+      "output": "Area triangle: 0.5\r\n",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Triangle Area - streched",
+      "setup": "g++ vectors.cpp",
+      "run": "./a.out",
+      "input": "t\r\n5 \r\n-5\r\n0\r\n0\r\n-10\r\n-2",
+      "output": "Area triangle: 30",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Triangle Area - random points",
+      "setup": "g++ vectors.cpp",
+      "run": "./a.out",
+      "input": "t\r\n1\r\n2\r\n3\r\n-1\r\n2\r\n4",
+      "output": "Area triangle: 3.5",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Polygon Area - pentagon",
+      "setup": "g++ vectors.cpp",
+      "run": "./a.out",
+      "input": "s\r\n5\r\n4\r\n4\r\n5\r\n4\r\n6\r\n5\r\n2\r\n9\r\n1\r\n6",
+      "output": "Area polygon: 12",
+      "comparison": "included",
+      "timeout": 12,
+      "points": null
+    },
+    {
+      "name": "Polygon Area - many points",
+      "setup": "g++ vectors.cpp",
+      "run": "./a.out",
+      "input": "s\r\n10\r\n-1\r\n7\r\n2\r\n7\r\n4\r\n5\r\n5\r\n3\r\n5\r\n0\r\n3\r\n-2\r\n-2\r\n-2\r\n-4\r\n0\r\n-4\r\n3\r\n-3\r\n5\r\n",
+      "output": "Area polygon: 67",
+      "comparison": "included",
+      "timeout": 15,
+      "points": null
+    },
+    {
+      "name": "Polygon Area - small size",
+      "setup": "g++ vectors.cpp",
+      "run": "./a.out",
+      "input": "s\r\n4\r\n0\r\n0\r\n0.1\r\n0.2\r\n-0.3\r\n0.2\r\n-0.7\r\n0",
+      "output": "Area polygon: 0.11",
+      "comparison": "included",
+      "timeout": 12,
+      "points": null
+    }
+  ]
+}
