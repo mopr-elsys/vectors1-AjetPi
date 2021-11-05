@@ -20,12 +20,12 @@ public:
 
     // this function should return the sum of the current vector and another "other" as a new Vector
     Vector sum(const Vector& other) const {
-        return Vector(0, 0);
+        return Vector(x + other.x, y + other.y);
     }
 
     // this function should return the difference of the current vector and another "other" as a new Vector
     Vector difference(const Vector& other) const {
-        return Vector(0, 0);
+        return Vector(other.x - x, other.y - y);
     }
 
     // this function should return a boolean value, answering the question whether the current vector and another "other" are collinear
@@ -35,7 +35,7 @@ public:
 
     // this function should return the length of the current vector
     double length() const {
-        return 0;
+        return sqrt(pow(x, 2) + pow(y, 2));
     }
 
     // this function should return the angle between the current vector and another "other"
