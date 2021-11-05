@@ -57,7 +57,25 @@ double area(const Point& p1, const Point& p2, const Point& p3) {
 
 // this function should find the area of the figure made up of up to 50 points
 double area(const Point points[50], int size) {
-    return 0;
+    if(size < 2) {
+        return 0;
+    }
+    
+    Point m;
+    for(int i = 0; i < size; i++) {
+        m.x += points[i].x;
+        m.y += points[i].y;
+    }
+    m.x /= size;
+    m.y /= size;
+    
+    double a = 0;
+    for(int i = 0; i + 1 < size; i++) {
+        a += area(m, points[i], points[i + 1]);
+    }
+    a += area(m, points[size - 1], points[0]);
+    
+    return a;
 }
 
 void vectors();
