@@ -25,12 +25,12 @@ public:
 
     // this function should return the difference of the current vector and another "other" as a new Vector
     Vector difference(const Vector& other) const {
-        return Vector(other.x - x, other.y - y);
+        return Vector(x - other.x, y - other.y);
     }
 
     // this function should return a boolean value, answering the question whether the current vector and another "other" are collinear
     bool is_colinear(const Vector& other) const {
-        return false;
+        return bool(x / other.x == y / other.y);
     }
 
     // this function should return the length of the current vector
@@ -40,7 +40,7 @@ public:
 
     // this function should return the angle between the current vector and another "other"
     double angle(const Vector& other) const {
-        return 0;
+        return acos((x * other.x + y * other.y) / (length() * other.length()));
     }
 
     // this is for printing the vector
@@ -52,7 +52,7 @@ public:
 
 // this function should find the area of the triangle made up of the three points p1, p2, p3
 double area(const Point& p1, const Point& p2, const Point& p3) {
-    return 0;
+    return abs(p1.x * (p2.y - p3.y) + p2.x * (p3.y - p1.y) + p3.x * (p1.y - p2.y)) / 2;
 }
 
 // this function should find the area of the figure made up of up to 50 points
